@@ -76,7 +76,7 @@ function getServer()
 {
     var server = new XMLHttpRequest();
     server.open("GET",
-                "http://api.weatherstack.com/current?access_key=1381353fb989634d5ada9788e7af9080&query=Dhaka",
+                "//api.weatherstack.com/current?access_key=1381353fb989634d5ada9788e7af9080&query=Dhaka",
                 true);
     server.onreadystatechange = function()
     {
