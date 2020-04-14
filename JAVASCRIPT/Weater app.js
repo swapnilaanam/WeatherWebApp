@@ -83,6 +83,7 @@ function getServer()
         if(this.readyState == 4 && this.status == 200)
         {
             data = JSON.parse(this.responseText);
+            console.log(data);
             clearData();
             setData();
         }
