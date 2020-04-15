@@ -46,29 +46,30 @@ function setData()
     head.innerHTML ="Date: " + currDate + "<br><br>" +
                     "Time: "  + currTime;
 
-    loca +=  data.location.name + ", " + data.location.country;
+    loca +=  data.data[0].city_name + ", " + "Bangladesh";
     loc.innerHTML = loca;
 
-    temperature += "Temperature: " + data.current.temperature + " &#8451;<br><br>" + 
-                   "Feels Like: " + data.current.feelslike + " &#8451;<br><br>" +
-                   "Condition: " + data.current.weather_descriptions[0] ;
+    temperature += "Temperature: " + data.data[0].temp + " &#8451;<br><br>" + 
+                   "App. Temp: " + data.data[0].app_temp + " &#8451;<br><br>" +
+                   "Condition: " + data.data[0].weather.description ;
     temp.innerHTML = temperature; 
     
-    wind += "Wind Speed: " + data.current.wind_speed + " Km/h <br><br>" + 
-            "Wind Direction: " + data.current.wind_dir + "<br><br>" +
-            "Wind Degree: " + data.current.wind_degree + "&deg";
+    wind += "Wind Speed: " + data.data[0].wind_spd + " Km/h <br><br>" + 
+            "Wind Direction: " + (data.data[0].wind_cdir_full).toUpperCase() + "<br><br>" +
+            "Wind Degree: " + data.data[0].wind_dir + "&deg";
     win.innerHTML = wind;
     
-    humadity += "Humidity: " + data.current.humidity + "% <br><br>" +
-                "Pressure: " + data.current.pressure + " SI <br><br>";
+    humadity += "Sunrise: " + ((parseFloat(data.data[0].sunrise)+6)-24) + " A.M <br><br>" +
+                "Sunset: " + ((parseFloat(data.data[0].sunset)+6)-12) + " P.M <br><br>" +
+                "Pressure: " + data.data[0].pres + " SI <br><br>";
     hum.innerHTML = humadity;
 
-    cloudcover += "Cloud-Cover: " + data.current.cloudcover + "% <br><br>" +
-                "UV-Index: " + data.current.uv_index + "<br><br>";
+    cloudcover += "Cloud-Cover: " + data.data[0].clouds + "% <br><br>" +
+                "UV-Index: " + data.data[0].uv + "<br><br>";
     cloud.innerHTML = cloudcover;
 
-    time += "Observation Time: " + data.current.observation_time + "<br><br>" +
-            "Day: " + (data.current.is_day).toUpperCase();
+    time += "Observation Time: " + data.data[0].ob_time + "<br><br>" +
+            "Timezone: " + data.data[0].timezone;
     tim.innerHTML = time;
 }
 
@@ -76,7 +77,7 @@ function getServer()
 {
     var server = new XMLHttpRequest();
     server.open("GET",
-                "http//api.weatherstack.com/current?access_key=1381353fb989634d5ada9788e7af9080&query=Dhaka",
+                "https://api.weatherbit.io/v2.0/current?city=Dhaka,BD&key=8acdbcfd56a94c9ea2a4eaeac0c39c0e",
                 true);
     server.onreadystatechange = function()
     {
