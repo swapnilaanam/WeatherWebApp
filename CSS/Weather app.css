@@ -75,4 +75,8 @@ body
        background-color: white;
        grid-column: 1/-1;   
     }
+    .dev-details
+    {
+       grid-template-columns: 1fr;
+    }
 }
