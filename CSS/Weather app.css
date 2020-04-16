@@ -68,7 +68,7 @@ body
     justify-items: center;
 }
 
-@media (max-width: 700px)
+@media and (max-width: 700px)
 {
     .time
     {
