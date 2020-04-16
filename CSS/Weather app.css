@@ -68,15 +68,15 @@ body
     justify-items: center;
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 900px)
 {
     .time
     {
-       background-color: white;
        grid-column: 1/-1;   
     }
     .dev-details
     {
        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 }
