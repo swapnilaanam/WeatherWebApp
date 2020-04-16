@@ -72,7 +72,7 @@ body
 {
     .time
     {
+       background-color: white;
        grid-column: 1/-1;   
-        background-color: yellow;
     }
 }
