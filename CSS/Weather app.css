@@ -68,7 +68,7 @@ body
     justify-items: center;
 }
 
-@media screen and (max-width: 900px)
+@media screen and (max-width: 1200px)
 {
     .time
     {
@@ -78,6 +78,8 @@ body
     {
        grid-template-columns: 1fr;
        grid-template-rows: 1fr 1fr 1fr;
-       height: 200px; 
     }
+    .footer
+    {
+        height: 200px
 }
